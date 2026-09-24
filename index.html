@@ -404,37 +404,37 @@ const ul = items => `<ul class="list">${items.map(i => `<li>${i}</li>`).join('')
 const PROJECTS = [
 {
   id:'tidal', title:'Tidal Energy Group Project', org:'University of Exeter', date:'Oct 2025 – Mar 2026', dur:'Group project',
-  cat:['cfd','structures'], label:'Renewables · Group', cover:'image2.png', coverAlt:'Venturi turbine CAD',
+  cat:['cfd','structures'], label:'Renewables · Group', cover:'venturi.png', coverAlt:'Venturi turbine CAD',
   summary:'Exploratory design of a venturi-enhanced tidal turbine and offshore working platform for Lavernock Point in the Bristol Channel.',
   chips:[['71%','Project grade'],['×3.9','Throat speed-up'],['400 kN','Platform load case']],
   tabs:[
     {name:'Overview', blocks:[
       {t:'text', h:'Brief', p:'Acting as an engineering consultancy commissioned by a corporate investment fund with strong ties to renewable energy and green development, the team produced exploratory designs for an ocean energy project in the Bristol Channel, optionally connected to an offshore working platform.'},
       {t:'check', h:'Design constraints', list:['Working platform at least 4 m above water level','Minimum platform area of 50 m²','Platform horizontal and largely free from wind- and wave-induced oscillation','Platform holds position and does not drift']},
-      {t:'row', imgs:[['image3.png','Lavernock Point map']], title:'Site selection — Lavernock Point', list:[
+      {t:'row', imgs:[['location.png','Lavernock Point map']], title:'Site selection — Lavernock Point', list:[
         'Wind speeds of 12–15 knots, considered calm for offshore platforms, limiting installation and operational risk.',
         'Tidal currents reach up to <strong>six knots</strong>, allowing consistent and efficient energy generation.']}
     ]},
     {name:'Turbine', blocks:[
-      {t:'row', imgs:[['image2.png','Venturi turbine CAD']], title:'Venturi-enhanced turbine concept', list:[
+      {t:'row', imgs:[['venturi.png','Venturi turbine CAD']], title:'Venturi-enhanced turbine concept', list:[
         'A venturi device raises energy output without scaling up the device, keeping costs down, with lower environmental impact than the other options considered.',
         'Open-centre turbine gives marine life a safe bypass through the device.',
         'The rotor sits near the end of the shroud throat to take advantage of the low-pressure, high-velocity region created by the venturi effect.']},
-      {t:'row', imgs:[['image4.png','Shroud CFD velocity contour']], title:'Shroud flow analysis', list:[
+      {t:'row', imgs:[['flow.png','Shroud CFD velocity contour']], title:'Shroud flow analysis', list:[
         'With a 1.2 m/s inlet velocity, the shroud reached <strong>4.690 m/s</strong> at the throat — a <strong>×3.908</strong> multiplier.',
         'Supports the case that the device can generate more power without a large increase in scale, and therefore cost.']},
-      {t:'row', imgs:[['image5.png','Blade airfoil pressure contours']], title:'Blade profile selection', list:[
+      {t:'row', imgs:[['blades.png','Blade airfoil pressure contours']], title:'Blade profile selection', list:[
         'Compared the <strong>NACA0012</strong> (top) and <strong>FX74</strong> (bottom) under identical flow conditions and angle of attack — pressure contours were very similar.',
         'NACA0012 selected: its less extreme camber makes it easier to manufacture.',
         'NACA profiles are widely researched, so supporting data is readily available.']}
     ]},
     {name:'Platform', blocks:[
-      {t:'row', imgs:[['image7.png','Truss leg FEA']], title:'Truss leg selection', list:[
+      {t:'row', imgs:[['trusslegs.png','Truss leg FEA']], title:'Truss leg selection', list:[
         'Compared a Z-braced truss (left) with an alternating X-braced truss (right).',
         'Triangular profile chosen for efficient material use and resistance to horizontal wind and tidal loads.',
         'FEA at <strong>80 kN</strong> in marine-grade S355 steel: both performed well, Z-braced narrowly ahead.',
         'Z-braced has half the diagonal members, making it the more material-efficient choice.']},
-      {t:'row', imgs:[['image6.png','Platform FEA']], title:'Platform vertical loading', list:[
+      {t:'row', imgs:[['platformfea.png','Platform FEA']], title:'Platform vertical loading', list:[
         '<strong>400 kN</strong> vertical load gave a maximum displacement of <strong>25 mm</strong>.',
         'Stress distributed largely as expected; uneven stress in some members pointed to modelling inaccuracies.',
         'No buckling observed — the truss configuration was stable under load.']}
