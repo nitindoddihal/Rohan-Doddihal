@@ -584,7 +584,7 @@ document.getElementById('tl').innerHTML = TL.map(([id,d]) => {
 document.getElementById('sk').innerHTML = SKILLS.map(([i,h,t]) =>
   `<div class="sk"><h4><i>${i}</i>${h}</h4><div class="tags">${t.map(x => `<span class="tag">${x}</span>`).join('')}</div></div>`).join('');
 
-document.getElementById('cert').innerHTML = img('image31.jpeg',"Dean's Commendation certificate");
+document.getElementById('cert').innerHTML = img('dean.png',"Dean's Commendation certificate");
 
 /* Filters */
 document.getElementById('filters').addEventListener('click', e => {
