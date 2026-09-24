@@ -473,13 +473,13 @@ const PROJECTS = [
       {t:'row', imgs:[['4angle.png','Pressure contour at 4°']], title:'Angle of attack 4°', list:['After multiple iterations, L/D of <strong>2.09</strong>.','Increasing the angle further reduces L/D.','Stagnation point still present.']}
     ]},
     {name:'Wind tunnel', blocks:[
-      {t:'row', imgs:[['windtunnel.jpeg','Model in wind tunnel'],['measurespeed.jpeg','Anemometer reading']], title:'Test setup', list:[
+      {t:'row', imgs:[['windtunnel.jpeg','Model in wind tunnel'],['measurespeed.png','Anemometer reading']], title:'Test setup', list:[
         'Model 3D printed by fused deposition modelling and mounted in the wind tunnel.',
         'Set to 0° and load cells zeroed so model weight did not affect readings.',
         'Anemometer-measured wind speed: <strong>11.8 m/s</strong>.']},
-      {t:'row', imgs:[['force0.jpeg','Force balance at 0°']], title:'Result at 0°', list:['Measured L/D <strong>1.25</strong> vs. simulated 0.66 — <strong>53%</strong> correlation.']},
-      {t:'row', imgs:[['force4.jpeg','Force balance at 4°']], title:'Result at 4°', list:['Measured L/D <strong>1.55</strong> vs. simulated 2.09 — <strong>74%</strong> correlation.']},
-      {t:'row', imgs:[['smoke machine.jpeg','Smoke generator'],['smokeflow.jpeg','Smoke flow visualisation']], title:'Flow visualisation', list:['Used the smoke machine to visualise flow over the winglet.']}
+      {t:'row', imgs:[['force0.png','Force balance at 0°']], title:'Result at 0°', list:['Measured L/D <strong>1.25</strong> vs. simulated 0.66 — <strong>53%</strong> correlation.']},
+      {t:'row', imgs:[['force4.png','Force balance at 4°']], title:'Result at 4°', list:['Measured L/D <strong>1.55</strong> vs. simulated 2.09 — <strong>74%</strong> correlation.']},
+      {t:'row', imgs:[['smoke machine.png','Smoke generator'],['smokeflow.png','Smoke flow visualisation']], title:'Flow visualisation', list:['Used the smoke machine to visualise flow over the winglet.']}
     ]},
     {name:'Results', blocks:[
       {t:'metrics', items:[['63.5%','Average CFD ↔ tunnel correlation',1],['74%','Correlation at 4°'],['53%','Correlation at 0°'],['121,100','Reynolds number']]},
@@ -524,24 +524,24 @@ const PROJECTS = [
 },
 {
   id:'garage', title:'Garage Intern', org:'PG MOT Village', date:'Aug 2026', dur:'1 month',
-  cat:['hands-on'], label:'Industry · Automotive', cover:'link2.jpeg', coverAlt:'Engine bay',
+  cat:['hands-on'], label:'Industry · Automotive', cover:'link2.png', coverAlt:'Engine bay',
   summary:'Workshop internship diagnosing and repairing customer vehicles — suspension, ignition and cooling faults, taken from symptom to fix.',
   chips:[['4','Case studies'],['OBD','Diagnostics'],['OEM','Spec repairs']],
   tabs:[
     {name:'Overview', blocks:[{t:'cases'}]},
-    {name:'Drop link', blocks:[{t:'case', imgs:['link1.jpeg','link2.jpeg','link3.jpeg'], alt:'Drop link',
+    {name:'Drop link', blocks:[{t:'case', imgs:['link1.png','link2.png','link3.png'], alt:'Drop link',
       s:'Excessive play detected in the tyre when tested vertically during vehicle inspection.',
       d:'Physical inspection confirmed a worn drop link with excessive articulation in the ball joint, causing instability. The drop link connects the anti-roll bar to the suspension, reducing body roll in corners.',
       r:'Removed the failed drop link using an impact driver and socket set. Fitted a new OEM-spec drop link, torqued to specification and retested — play eliminated.'}]},
-    {name:'Cylinder misfire', blocks:[{t:'case', imgs:['cylin1.jpeg','cylin2.jpeg','cylin3.jpeg'], alt:'Engine',
+    {name:'Cylinder misfire', blocks:[{t:'case', imgs:['cylin1.png','cylin2.png','cylin3.png'], alt:'Engine',
       s:'Rough running reported. OBD scan returned <strong>P0304</strong> (cylinder 4 misfire) and <strong>P0300</strong> (multi-cylinder misfire), both current faults on the ECM.',
       d:'<ol><li><strong>Ignition coil</strong> — swapped coils on cylinders 4 and 1. Fault stayed on cylinder 4: coil ruled out.</li><li><strong>Spark plug</strong> — swapped plugs on cylinders 4 and 1. Fault stayed on cylinder 4: plug ruled out.</li><li><strong>Compression test</strong> on cylinder 4.</li></ol>',
       r:'Fault isolated to cylinder 4 by component swap testing. Compression test found a leak in the intake manifold gasket — a structured diagnostic process rather than speculative part replacement.'}]},
-    {name:'Thermostat housing', blocks:[{t:'case', imgs:['thermo1.jpeg','thermo2.jpeg'], alt:'Thermostat housing',
+    {name:'Thermostat housing', blocks:[{t:'case', imgs:['thermo1.png','thermo2.png'], alt:'Thermostat housing',
       s:'Customer reported overheating.',
       d:'Identified a coolant leak at the thermostat housing. Confirmed thermostat failure as the cause — the unit was not opening correctly, disrupting coolant flow.',
       r:'Drained the cooling system, installed a new thermostat housing with a fresh gasket and refilled the coolant.'}]},
-    {name:'Lower arm', blocks:[{t:'case', imgs:['arm1.jpeg','arm2.jpeg','arm3.jpeg'], alt:'Lower suspension arm',
+    {name:'Lower arm', blocks:[{t:'case', imgs:['arm1.png','arm2.png','arm3.png'], alt:'Lower suspension arm',
       s:'Excessive play detected when gripping the tyre at 12 and 6 o’clock during vehicle inspection.',
       d:'Physical inspection confirmed a worn ball joint on the lower arm, causing instability.',
       r:'Removed the failed lower arm using an impact driver and socket set. Fitted a new OEM-spec part, torqued to specification and retested — play eliminated.'}]}
