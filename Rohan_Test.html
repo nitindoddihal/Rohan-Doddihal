@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohan Doddihal — Engineering Portfolio</title>
+<meta name="description" content="Engineering portfolio of Rohan Doddihal, Mechanical Engineering student at the University of Exeter — aerodynamics, CFD, structures, telemetry and vehicle diagnostics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0e13; --bg-2:#0e131a; --surface:#121922; --surface-2:#18212c; --surface-3:#1e2936;
+  --border:#222d3a; --border-2:#2f3e51;
+  --text:#e7edf4; --muted:#8e9db0; --dim:#5f6d7f;
+  --accent:#6fb1ee; --accent-soft:#a7caec; --accent-bg:rgba(111,177,238,.10); --accent-line:rgba(111,177,238,.35);
+  --green:#5fd1a6; --amber:#f0b35a;
+  --r:14px; --r-sm:9px;
+  --sans:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.locked{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+strong{color:#fff;font-weight:600}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:40;background:rgba(10,14,19,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
+.mark{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-family:var(--mono);font-size:13px;font-weight:600;color:var(--bg);background:linear-gradient(135deg,var(--accent-soft),var(--accent))}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:8px 14px;border-radius:8px;font-size:14px;color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--text);background:var(--surface)}
+
+/* HERO */
+.hero{position:relative;padding:110px 0 90px;border-bottom:1px solid var(--border);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url("./Rohan Doddihal — Engineering Portfolio_files/image1.jpeg") center/cover no-repeat;opacity:.16;filter:grayscale(1)}
+.hero::after{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(900px 480px at 78% 10%,rgba(111,177,238,.16),transparent 60%),
+    linear-gradient(rgba(111,177,238,.06) 1px,transparent 1px) 0 0/44px 44px,
+    linear-gradient(90deg,rgba(111,177,238,.06) 1px,transparent 1px) 0 0/44px 44px,
+    linear-gradient(180deg,transparent 40%,var(--bg) 100%)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent-soft);padding:6px 12px;border:1px solid var(--accent-line);border-radius:999px;background:var(--accent-bg)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.02;font-weight:800;letter-spacing:-2px;margin:22px 0 18px}
+.hero h1 span{color:var(--accent-soft)}
+.hero p.lead{max-width:640px;font-size:18px;color:var(--muted)}
+.cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:14px;transition:.2s}
+.btn-primary{background:var(--accent);color:#06121f}
+.btn-primary:hover{background:var(--accent-soft)}
+.btn-ghost{border:1px solid var(--border-2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-bg)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:64px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.stat{background:rgba(18,25,34,.85);padding:22px 22px 20px}
+.stat .v{font-family:var(--mono);font-size:30px;font-weight:600;color:#fff;letter-spacing:-1px}
+.stat .v small{font-size:16px;color:var(--accent)}
+.stat .l{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* SECTIONS */
+section.block{padding:90px 0;border-bottom:1px solid var(--border)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent)}
+.sec-head h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-1px;margin-top:6px}
+.sec-head p{color:var(--muted);max-width:460px}
+
+/* FILTERS */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.chip-btn{padding:8px 14px;border-radius:999px;border:1px solid var(--border-2);font-size:13px;color:var(--muted);transition:.2s}
+.chip-btn:hover{color:var(--text);border-color:var(--dim)}
+.chip-btn.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+
+/* PROJECT CARDS */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{position:relative;display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent-line);box-shadow:0 20px 50px -20px rgba(0,0,0,.8),0 0 0 1px var(--accent-line)}
+.card.hide{display:none}
+.card-media{position:relative;aspect-ratio:16/9;background:#fff;overflow:hidden;border-bottom:1px solid var(--border)}
+.card-media img,.card-media .ph{width:100%;height:100%;object-fit:cover;aspect-ratio:auto;transition:transform .5s}
+.card:hover .card-media img{transform:scale(1.04)}
+.card-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,14,19,.55))}
+.card-tag{position:absolute;top:14px;left:14px;z-index:1;font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-radius:6px;background:rgba(10,14,19,.85);border:1px solid var(--border-2);color:var(--accent-soft)}
+.card-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.card-meta{font-family:var(--mono);font-size:12px;color:var(--dim);display:flex;gap:10px;flex-wrap:wrap}
+.card h3{font-size:22px;font-weight:700;letter-spacing:-.4px;margin:8px 0 8px}
+.card p{color:var(--muted);font-size:14.5px}
+.card-metrics{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.cm{padding:8px 12px;border-radius:9px;background:var(--surface-2);border:1px solid var(--border)}
+.cm b{display:block;font-family:var(--mono);font-size:16px;color:#fff;font-weight:600}
+.cm span{font-size:11.5px;color:var(--muted)}
+.card-open{margin-top:auto;padding-top:20px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--accent)}
+.card-open svg{transition:transform .2s}
+.card:hover .card-open svg{transform:translateX(4px)}
+
+/* TIMELINE */
+.timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:linear-gradient(90deg,var(--accent-line),var(--border))}
+.tl{position:relative;padding-top:34px;text-align:left}
+.tl::before{content:"";position:absolute;top:3px;left:0;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.tl .d{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.tl h4{font-size:16px;margin:4px 0 2px}
+.tl p{font-size:13px;color:var(--muted)}
+.tl:hover h4{color:var(--accent-soft)}
+
+/* SKILLS */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.sk{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.sk h4{font-size:14px;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.sk h4 i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--accent-bg);color:var(--accent);font-style:normal;font-family:var(--mono);font-size:12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12.5px;padding:5px 10px;border-radius:6px;background:var(--surface-2);border:1px solid var(--border);color:#c9d4e1}
+
+/* ACHIEVEMENTS */
+.ach{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;align-items:stretch}
+.ach-main{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.ach-main .cert-wrap{background:#fff;border-radius:10px;overflow:hidden;cursor:zoom-in;border:1px solid var(--border-2)}
+.ach-main .cert-wrap img,.ach-main .cert-wrap .ph{width:100%;aspect-ratio:1.414/1;object-fit:cover}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--amber);padding:5px 10px;border:1px solid rgba(240,179,90,.35);border-radius:6px;background:rgba(240,179,90,.08)}
+.ach-main h3{font-size:26px;letter-spacing:-.5px;margin:14px 0 8px}
+.ach-main p{color:var(--muted);font-size:14.5px}
+.ach-side{display:grid;gap:22px}
+.ach-tile{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;display:flex;gap:18px;align-items:center;text-align:left;transition:.2s}
+.ach-tile:hover{border-color:var(--accent-line)}
+.ach-tile .v{font-family:var(--mono);font-size:32px;font-weight:600;color:#fff;min-width:110px}
+.ach-tile h4{font-size:15px}
+.ach-tile p{font-size:13px;color:var(--muted)}
+
+/* FOOTER */
+footer{padding:40px 0 60px;color:var(--dim);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* PLACEHOLDER (if an image file is missing) */
+.ph{display:grid;place-items:center;aspect-ratio:4/3;width:100%;background:repeating-linear-gradient(45deg,var(--surface-2) 0 10px,var(--surface-3) 10px 20px);color:var(--dim);font-family:var(--mono);font-size:12px;text-align:center;padding:12px;border-radius:inherit}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:28px}
+.modal.open{display:flex}
+.scrim{position:absolute;inset:0;background:rgba(3,6,10,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fade .2s}
+.panel{position:relative;width:100%;max-width:1060px;height:min(92vh,960px);background:var(--bg-2);border:1px solid var(--border-2);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 40px 120px -20px rgba(0,0,0,.9);animation:rise .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.985)}}
+.p-head{padding:26px 30px 0;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--surface),var(--bg-2))}
+.p-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.p-head h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.8px;margin:6px 0 6px}
+.p-head .sum{color:var(--muted);max-width:720px;font-size:14.5px}
+.close{flex:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--border-2);display:grid;place-items:center;transition:.2s}
+.close:hover{background:var(--surface-2);border-color:var(--dim)}
+.tabs{display:flex;gap:4px;margin-top:20px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{white-space:nowrap;padding:11px 16px;font-size:14px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;transition:.2s}
+.tab:hover{color:var(--text)}
+.tab.on{color:#fff;border-bottom-color:var(--accent)}
+.tab .n{font-family:var(--mono);font-size:11px;color:var(--dim);margin-right:6px}
+.tab.on .n{color:var(--accent)}
+.p-body{flex:1;overflow-y:auto;padding:30px}
+.p-foot{display:flex;justify-content:space-between;gap:12px;padding:14px 30px;border-top:1px solid var(--border);background:var(--surface)}
+.p-foot button{font-size:13px;color:var(--muted);padding:8px 12px;border-radius:8px;display:inline-flex;gap:8px;align-items:center}
+.p-foot button:hover:not(:disabled){color:var(--text);background:var(--surface-2)}
+.p-foot button:disabled{opacity:.3;cursor:default}
+.pane{animation:fade .25s}
+
+/* BLOCKS inside modal */
+.blk{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;margin-bottom:18px}
+.blk h4,.row-text h4{font-size:12px;font-family:var(--mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-weight:600}
+.blk p{color:#c9d4e1}
+ul.list{list-style:none;display:grid;gap:9px}
+ul.list li{position:relative;padding-left:20px;color:#c9d4e1;font-size:14.5px}
+ul.list li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--accent-line);border:1px solid var(--accent)}
+ul.check{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+ul.check li{display:flex;gap:10px;padding:12px 14px;border-radius:var(--r-sm);background:var(--surface-2);border:1px solid var(--border);font-size:14px;color:#c9d4e1}
+ul.check li::before{content:"✓";color:var(--green);font-weight:700}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:22px;align-items:start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-bottom:18px}
+.row-media{display:grid;gap:10px}
+.row-media img,.row-media .ph{width:100%;border-radius:10px;background:#fff;cursor:zoom-in;border:1px solid var(--border)}
+.row-text{padding:6px 6px 6px 0}
+.row-text h3{font-size:18px;margin-bottom:10px;letter-spacing:-.2px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:18px}
+.metric{background:linear-gradient(160deg,var(--surface-2),var(--surface));border:1px solid var(--border);border-radius:var(--r);padding:18px 20px}
+.metric .mv{font-family:var(--mono);font-size:28px;font-weight:600;color:#fff;letter-spacing:-1px}
+.metric .ml{font-size:12.5px;color:var(--muted);margin-top:2px}
+.metric.hl{border-color:var(--accent-line);background:linear-gradient(160deg,rgba(111,177,238,.14),var(--surface))}
+.wide{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-bottom:18px}
+.wide img,.wide .ph{width:100%;border-radius:10px;cursor:zoom-in}
+.formula{margin-top:14px;padding:14px 16px;border-radius:var(--r-sm);background:var(--bg);border:1px solid var(--border);font-family:var(--mono);font-size:13px;color:#c9d4e1;display:grid;gap:4px}
+.formula .eq{color:#fff;font-size:14px;margin-bottom:4px}
+.formula .eq b{color:var(--accent)}
+
+/* chart */
+.chart{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;margin-bottom:18px}
+.legend{display:flex;gap:18px;font-size:13px;color:var(--muted);margin:4px 0 10px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.chart svg{width:100%;height:auto}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:18px}
+.step{position:relative;background:var(--surface);border:1px solid var(--border);padding:18px 16px;border-radius:0}
+.step:first-child{border-radius:var(--r) 0 0 var(--r)}
+.step:last-child{border-radius:0 var(--r) var(--r) 0}
+.step+.step{border-left:0}
+.step .k{font-family:var(--mono);font-size:11px;color:var(--accent)}
+.step h5{font-size:14px;margin:6px 0 4px}
+.step p{font-size:12.5px;color:var(--muted);line-height:1.5}
+.step:not(:last-child)::after{content:"";position:absolute;right:-7px;top:50%;width:12px;height:12px;background:var(--surface);border-top:1px solid var(--border);border-right:1px solid var(--border);transform:translateY(-50%) rotate(45deg);z-index:1}
+
+/* garage cases */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:18px}
+.gallery img,.gallery .ph{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--border);cursor:zoom-in}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fcol{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px;position:relative}
+.fcol .k{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:10px}
+.fcol .k i{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-style:normal;font-size:11px}
+.fcol.s .k{color:var(--amber)} .fcol.s .k i{background:rgba(240,179,90,.12)}
+.fcol.d .k{color:var(--accent)} .fcol.d .k i{background:var(--accent-bg)}
+.fcol.r .k{color:var(--green)} .fcol.r .k i{background:rgba(95,209,166,.12)}
+.fcol p,.fcol li{font-size:14px;color:#c9d4e1}
+.fcol ol{padding-left:18px;display:grid;gap:8px}
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.case-link{display:flex;gap:14px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px;transition:.2s}
+.case-link:hover{border-color:var(--accent-line);background:var(--surface-2)}
+.case-link img,.case-link .ph{width:92px;height:70px;object-fit:cover;border-radius:8px;flex:none;aspect-ratio:auto}
+.case-link .k{font-family:var(--mono);font-size:11px;color:var(--accent)}
+.case-link h5{font-size:15px;margin:2px 0}
+.case-link p{font-size:12.5px;color:var(--muted)}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(3,6,10,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:40px;cursor:zoom-out}
+.lb.open{display:flex;animation:fade .2s}
+.lb img{max-width:100%;max-height:82vh;border-radius:10px;background:#fff}
+.lb p{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* RESPONSIVE */
+@media (max-width:960px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .skills{grid-template-columns:repeat(2,1fr)}
+  .ach{grid-template-columns:1fr}
+  .pipe{grid-template-columns:1fr}
+  .step,.step:first-child,.step:last-child{border-radius:0;border-left:1px solid var(--border)}
+  .step:first-child{border-radius:var(--r) var(--r) 0 0}
+  .step:last-child{border-radius:0 0 var(--r) var(--r)}
+  .step+.step{border-top:0}
+  .step:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-7px;transform:translateX(-50%) rotate(135deg)}
+}
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  .nav-links a:not(.keep){display:none}
+  .hero{padding:70px 0 60px}
+  .grid,.timeline,.cases,.flow,ul.check{grid-template-columns:1fr}
+  .timeline::before{display:none}
+  .row{grid-template-columns:1fr}
+  .ach-main{grid-template-columns:1fr}
+  .modal{padding:0}
+  .panel{height:100%;max-height:none;border-radius:0}
+  .p-head{padding:18px 18px 0}
+  .p-body{padding:18px}
+  .p-foot{padding:12px 18px}
+  .skills{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand"><span class="mark">RD</span>Rohan Doddihal</a>
+    <div class="nav-links">
+      <a href="#projects" class="keep">Projects</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Achievements</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow"><i></i>Mechanical Engineering · University of Exeter</span>
+    <h1>Rohan Doddihal<br><span>Engineering Portfolio</span></h1>
+    <p class="lead">Aerodynamics, CFD and hands-on vehicle engineering — from tidal turbines and Formula Student aero to lap-telemetry tools and workshop diagnostics.</p>
+    <div class="cta">
+      <a href="#projects" class="btn btn-primary">View projects
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+      <a href="#achievements" class="btn btn-ghost">Achievements</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="v">71<small>%</small></div><div class="l">Tidal energy group project grade</div></div>
+      <div class="stat"><div class="v">×3.9</div><div class="l">Flow speed-up at venturi throat (CFD)</div></div>
+      <div class="stat"><div class="v">63.5<small>%</small></div><div class="l">Avg CFD ↔ wind-tunnel correlation</div></div>
+      <div class="stat"><div class="v">15<small>%</small></div><div class="l">Avg lap-time gain from telemetry tool</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block" id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="kicker">01 — Selected work</div><h2>Projects</h2></div>
+        <p>Select a project to open the full case study — design, analysis, testing and results.</p>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="kicker">02 — Experience</div><h2>Timeline</h2></div></div>
+      <div class="timeline" id="tl"></div>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="kicker">03 — Toolkit</div><h2>Skills</h2></div><p>Tools and methods used across the projects above.</p></div>
+      <div class="skills" id="sk"></div>
+    </div>
+  </section>
+
+  <section class="block" id="achievements">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="kicker">04 — Recognition</div><h2>Achievements</h2></div></div>
+      <div class="ach">
+        <div class="ach-main">
+          <div class="cert-wrap" id="cert"></div>
+          <div>
+            <span class="badge">★ Academic award</span>
+            <h3>Dean's Commendation</h3>
+            <p>University of Exeter. Click the certificate to view it in full.</p>
+          </div>
+        </div>
+        <div class="ach-side">
+          <button class="ach-tile" data-open="tidal"><div class="v">71%</div><div><h4>Tidal Energy Group Project</h4><p>First group design project — Bristol Channel ocean energy concept</p></div></button>
+          <button class="ach-tile" data-open="f1"><div class="v">−15%</div><div><h4>Average lap time, 5 circuits</h4><p>Using a self-built Python telemetry dashboard</p></div></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Rohan Doddihal · Mechanical Engineering, University of Exeter</span>
+    <!-- Add contact links here, e.g.:
+    <span><a href="mailto:you@example.com">Email</a> · <a href="https://linkedin.com/in/...">LinkedIn</a></span> -->
+  </div>
+</footer>
+
+<!-- Project modal -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="scrim" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <div class="p-head">
+      <div class="p-top">
+        <div>
+          <div class="card-meta" id="m-meta"></div>
+          <h2 id="m-title"></h2>
+          <p class="sum" id="m-sum"></p>
+        </div>
+        <button class="close" data-close aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="tabs" id="m-tabs" role="tablist"></div>
+    </div>
+    <div class="p-body" id="m-body"></div>
+    <div class="p-foot">
+      <button id="m-prev">← <span></span></button>
+      <button id="m-next"><span></span> →</button>
+    </div>
+  </div>
+</div>
+
+<div class="lb" id="lb"><img alt=""><p></p></div>
+
+<script>
+/* Image folder — keep this matching the folder next to this file */
+const IMG = "./Rohan Doddihal — Engineering Portfolio_files/";
+
+/* Swap any missing image for a neat placeholder */
+document.addEventListener('error', e => {
+  const im = e.target;
+  if (im.tagName !== 'IMG' || im.dataset.failed) return;
+  im.dataset.failed = 1;
+  const d = document.createElement('div');
+  d.className = 'ph';
+  d.textContent = im.alt || 'Image';
+  im.replaceWith(d);
+}, true);
+
+const img = (f, alt) => `<img src="${IMG}${f}" alt="${alt}" loading="lazy" data-zoom>`;
+const ul = items => `<ul class="list">${items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+
+/* ───────── PROJECT DATA ───────── */
+const PROJECTS = [
+{
+  id:'tidal', title:'Tidal Energy Group Project', org:'University of Exeter', date:'Oct 2025 – Mar 2026', dur:'Group project',
+  cat:['cfd','structures'], label:'Renewables · Group', cover:'image2.png', coverAlt:'Venturi turbine CAD',
+  summary:'Exploratory design of a venturi-enhanced tidal turbine and offshore working platform for Lavernock Point in the Bristol Channel.',
+  chips:[['71%','Project grade'],['×3.9','Throat speed-up'],['400 kN','Platform load case']],
+  tabs:[
+    {name:'Overview', blocks:[
+      {t:'text', h:'Brief', p:'Acting as an engineering consultancy commissioned by a corporate investment fund with strong ties to renewable energy and green development, the team produced exploratory designs for an ocean energy project in the Bristol Channel, optionally connected to an offshore working platform.'},
+      {t:'check', h:'Design constraints', list:['Working platform at least 4 m above water level','Minimum platform area of 50 m²','Platform horizontal and largely free from wind- and wave-induced oscillation','Platform holds position and does not drift']},
+      {t:'row', imgs:[['image3.png','Lavernock Point map']], title:'Site selection — Lavernock Point', list:[
+        'Wind speeds of 12–15 knots, considered calm for offshore platforms, limiting installation and operational risk.',
+        'Tidal currents reach up to <strong>six knots</strong>, allowing consistent and efficient energy generation.']}
+    ]},
+    {name:'Turbine', blocks:[
+      {t:'row', imgs:[['image2.png','Venturi turbine CAD']], title:'Venturi-enhanced turbine concept', list:[
+        'A venturi device raises energy output without scaling up the device, keeping costs down, with lower environmental impact than the other options considered.',
+        'Open-centre turbine gives marine life a safe bypass through the device.',
+        'The rotor sits near the end of the shroud throat to take advantage of the low-pressure, high-velocity region created by the venturi effect.']},
+      {t:'row', imgs:[['image4.png','Shroud CFD velocity contour']], title:'Shroud flow analysis', list:[
+        'With a 1.2 m/s inlet velocity, the shroud reached <strong>4.690 m/s</strong> at the throat — a <strong>×3.908</strong> multiplier.',
+        'Supports the case that the device can generate more power without a large increase in scale, and therefore cost.']},
+      {t:'row', imgs:[['image5.png','Blade airfoil pressure contours']], title:'Blade profile selection', list:[
+        'Compared the <strong>NACA0012</strong> (top) and <strong>FX74</strong> (bottom) under identical flow conditions and angle of attack — pressure contours were very similar.',
+        'NACA0012 selected: its less extreme camber makes it easier to manufacture.',
+        'NACA profiles are widely researched, so supporting data is readily available.']}
+    ]},
+    {name:'Platform', blocks:[
+      {t:'row', imgs:[['image7.png','Truss leg FEA']], title:'Truss leg selection', list:[
+        'Compared a Z-braced truss (left) with an alternating X-braced truss (right).',
+        'Triangular profile chosen for efficient material use and resistance to horizontal wind and tidal loads.',
+        'FEA at <strong>80 kN</strong> in marine-grade S355 steel: both performed well, Z-braced narrowly ahead.',
+        'Z-braced has half the diagonal members, making it the more material-efficient choice.']},
+      {t:'row', imgs:[['image6.png','Platform FEA']], title:'Platform vertical loading', list:[
+        '<strong>400 kN</strong> vertical load gave a maximum displacement of <strong>25 mm</strong>.',
+        'Stress distributed largely as expected; uneven stress in some members pointed to modelling inaccuracies.',
+        'No buckling observed — the truss configuration was stable under load.']}
+    ]},
+    {name:'Outcome', blocks:[
+      {t:'metrics', items:[['71%','Final project grade',1],['4.69 m/s','Throat velocity (1.2 m/s inlet)'],['80 kN','Truss leg FEA load'],['25 mm','Max platform displacement']]},
+      {t:'text', h:'Reflection', list:['A strong first group project. The team started without much direction but became goal-oriented as the first presentation approached, finishing with a 71% grade the whole group was proud of.']},
+      {t:'text', h:'Limitations', list:[
+        'No physical testing of the venturi — reliance on SolidWorks simulation alone was a significant limitation.',
+        'The same applied to the truss tests, and only a small number of truss types were evaluated; jacket-style and square trusses never progressed past brainstorming.']}
+    ]}
+  ]
+},
+{
+  id:'winglet', title:'XRacing Winglet', org:'XRacing Formula Student', date:'Jun 2026', dur:'1 month',
+  cat:['cfd','testing','structures'], label:'Motorsport · Aero', cover:'image12.png', coverAlt:'Winglet render',
+  summary:'Front winglet for the XRacing Formula Student car, designed in SolidWorks, analysed in ANSYS and validated in the wind tunnel.',
+  chips:[['S1223','Airfoil'],['63.5%','CFD ↔ tunnel'],['FSUK T8.4','Load tested']],
+  tabs:[
+    {name:'Design', blocks:[
+      {t:'text', h:'Overview', p:'Design a winglet positioned above the front tyres of the XRacing Formula Student car to manage flow around the front of the car.'},
+      {t:'row', imgs:[['image12.png','Winglet render']], title:'Airfoil selection & CAD', list:[
+        'Reviewed motorsport airfoil studies and selected the <strong>S1223</strong> for its high-lift, low-drag profile.',
+        'Built a 1/3-scale model in SolidWorks: airfoil imported with the curve feature, splined and extruded.']},
+      {t:'row', imgs:[['image11.png','FEA load test']], title:'Structural load testing — FSUK 2025', list:[
+        '<strong>T8.4.1:</strong> 200 N distributed over a minimum of 225 cm², max deflection ≤ 10 mm.',
+        '<strong>T8.4.2:</strong> 50 N at any point in any direction, max deflection ≤ 25 mm — passed.']}
+    ]},
+    {name:'CFD', blocks:[
+      {t:'row', imgs:[['image8.png','ANSYS mesh']], title:'Mesh & solver setup', list:[
+        'Geometry imported from SolidWorks into ANSYS and prepared in SpaceClaim.',
+        'Minimum orthogonal quality <strong>0.120</strong>, above the 0.100 threshold.',
+        'Transition SST turbulence model.'],
+        extra:`<div class="formula"><div class="eq">Re = ρVc / μ = <b>121,100</b></div><span>c  chord          = 0.15 m</span><span>V  flow velocity  = 11.8 m/s</span><span>ρ  air density    = 1.225 kg/m³</span><span>μ  dyn. viscosity = 1.7894 × 10⁻⁵ Pa·s</span></div>`},
+      {t:'row', imgs:[['image9.png','Pressure contour at 0°']], title:'Angle of attack 0°', list:['L/D ratio of <strong>0.66</strong>.','Very low ratio with a prominent stagnation point at the leading edge.']},
+      {t:'row', imgs:[['image10.png','Pressure contour at 4°']], title:'Angle of attack 4°', list:['After multiple iterations, L/D of <strong>2.09</strong>.','Increasing the angle further reduces L/D.','Stagnation point still present.']}
+    ]},
+    {name:'Wind tunnel', blocks:[
+      {t:'row', imgs:[['image13.jpeg','Model in wind tunnel'],['image17.jpeg','Anemometer reading']], title:'Test setup', list:[
+        'Model 3D printed by fused deposition modelling and mounted in the wind tunnel.',
+        'Set to 0° and load cells zeroed so model weight did not affect readings.',
+        'Anemometer-measured wind speed: <strong>11.8 m/s</strong>.']},
+      {t:'row', imgs:[['image14.jpeg','Force balance at 0°']], title:'Result at 0°', list:['Measured L/D <strong>1.25</strong> vs. simulated 0.66 — <strong>53%</strong> correlation.']},
+      {t:'row', imgs:[['image15.jpeg','Force balance at 4°']], title:'Result at 4°', list:['Measured L/D <strong>1.55</strong> vs. simulated 2.09 — <strong>74%</strong> correlation.']},
+      {t:'row', imgs:[['image16.jpeg','Smoke generator'],['image18.jpeg','Smoke flow visualisation']], title:'Flow visualisation', list:['Used the smoke machine to visualise flow over the winglet.']}
+    ]},
+    {name:'Results', blocks:[
+      {t:'metrics', items:[['63.5%','Average CFD ↔ tunnel correlation',1],['74%','Correlation at 4°'],['53%','Correlation at 0°'],['121,100','Reynolds number']]},
+      {t:'chart'},
+      {t:'text', h:'Reflection', list:[
+        'Valuable first experience in ANSYS and in correlating CFD against physical wind-tunnel data.',
+        'To improve correlation: study y+ values and refine the boundary-layer mesh.',
+        'Other sources of discrepancy: surface roughness of the printed model and disturbance from the mounting rod — most noticeable at low angles, where the wing’s own aerodynamic forces were smaller.']}
+    ]}
+  ]
+},
+{
+  id:'f1', title:'F1 Telemetry Dashboard', org:'Personal project', date:'Jun 2026', dur:'1 month',
+  cat:['software'], label:'Software · Data', cover:'image30.png', coverAlt:'F1 telemetry dashboard',
+  summary:'A Python post-lap dashboard that reads live UDP telemetry from F1 23 and compares two laps the way a pit-wall engineer would.',
+  chips:[['15%','Avg lap gain'],['5','Circuits'],['Python','NumPy · Matplotlib']],
+  tabs:[
+    {name:'Overview', blocks:[
+      {t:'text', h:'Goal', p:'Build a post-lap dashboard in Python that replicates pit-wall data visualisation: extract raw telemetry from the F1 23 UDP broadcast, process it, and compare two laps to show where time is lost or gained.'},
+      {t:'wide', f:'image30.png', a:'F1 telemetry dashboard'}
+    ]},
+    {name:'Pipeline', blocks:[
+      {t:'pipe', steps:[
+        ['01','UDP capture','Socket bound to localhost:20777, the F1 23 default broadcast port.'],
+        ['02','Packet parsing','0 motion (X/Z), 1 session (track), 2 lap (times, distance), 6 telemetry.'],
+        ['03','Reference lap','Keyboard interrupt ends a lap; saved to JSON if no reference exists.'],
+        ['04','Delta','Both laps projected onto a common distance axis with np.interp.'],
+        ['05','Dashboard','Six Matplotlib traces, track map and sector-time table.']]},
+      {t:'text', h:'Process', list:[
+        'Packet 0 (motion) for track-map X/Z position, packet 1 (session) for track ID, packet 2 (lap) for lap time, sector times and lap distance, packet 6 (car telemetry) for throttle, brake, steer, speed and gear.',
+        'A keyboard interrupt stops recording; the lap is serialised to JSON as the reference if none exists, and later runs are compared against it.',
+        'Delta computed by interpolating both laps onto a shared distance axis and differencing at small distance increments.',
+        'Six subplots — throttle, brake, steer, speed, gear and delta — plus a track-map axis and a table of sector times, lap time, delta and top speed.']}
+    ]},
+    {name:'Outcome', blocks:[
+      {t:'metrics', items:[['15%','Average lap-time improvement',1],['5','Circuits tested'],['4','UDP packet types decoded'],['6','Telemetry traces']]},
+      {t:'text', h:'Result', list:[
+        'Used across 5 circuits to compare personal-best laps before and after reviewing the traces, giving an average lap-time improvement of 15%.',
+        'Built understanding of how data acquisition, processing and visualisation connect to on-track performance — skills directly relevant to motorsport performance engineering.']}
+    ]}
+  ]
+},
+{
+  id:'garage', title:'Garage Intern', org:'PG MOT Village', date:'Aug 2026', dur:'1 month',
+  cat:['hands-on'], label:'Industry · Automotive', cover:'image22.jpeg', coverAlt:'Engine bay',
+  summary:'Workshop internship diagnosing and repairing customer vehicles — suspension, ignition and cooling faults, taken from symptom to fix.',
+  chips:[['4','Case studies'],['OBD','Diagnostics'],['OEM','Spec repairs']],
+  tabs:[
+    {name:'Overview', blocks:[{t:'cases'}]},
+    {name:'Drop link', blocks:[{t:'case', imgs:['image19.jpeg','image20.jpeg','image21.jpeg'], alt:'Drop link',
+      s:'Excessive play detected in the tyre when tested vertically during vehicle inspection.',
+      d:'Physical inspection confirmed a worn drop link with excessive articulation in the ball joint, causing instability. The drop link connects the anti-roll bar to the suspension, reducing body roll in corners.',
+      r:'Removed the failed drop link using an impact driver and socket set. Fitted a new OEM-spec drop link, torqued to specification and retested — play eliminated.'}]},
+    {name:'Cylinder misfire', blocks:[{t:'case', imgs:['image22.jpeg','image23.jpeg','image24.jpeg'], alt:'Engine',
+      s:'Rough running reported. OBD scan returned <strong>P0304</strong> (cylinder 4 misfire) and <strong>P0300</strong> (multi-cylinder misfire), both current faults on the ECM.',
+      d:'<ol><li><strong>Ignition coil</strong> — swapped coils on cylinders 4 and 1. Fault stayed on cylinder 4: coil ruled out.</li><li><strong>Spark plug</strong> — swapped plugs on cylinders 4 and 1. Fault stayed on cylinder 4: plug ruled out.</li><li><strong>Compression test</strong> on cylinder 4.</li></ol>',
+      r:'Fault isolated to cylinder 4 by component swap testing. Compression test found a leak in the intake manifold gasket — a structured diagnostic process rather than speculative part replacement.'}]},
+    {name:'Thermostat housing', blocks:[{t:'case', imgs:['image25.jpeg','image26.jpeg'], alt:'Thermostat housing',
+      s:'Customer reported overheating.',
+      d:'Identified a coolant leak at the thermostat housing. Confirmed thermostat failure as the cause — the unit was not opening correctly, disrupting coolant flow.',
+      r:'Drained the cooling system, installed a new thermostat housing with a fresh gasket and refilled the coolant.'}]},
+    {name:'Lower arm', blocks:[{t:'case', imgs:['image27.jpeg','image28.jpeg','image29.jpeg'], alt:'Lower suspension arm',
+      s:'Excessive play detected when gripping the tyre at 12 and 6 o’clock during vehicle inspection.',
+      d:'Physical inspection confirmed a worn ball joint on the lower arm, causing instability.',
+      r:'Removed the failed lower arm using an impact driver and socket set. Fitted a new OEM-spec part, torqued to specification and retested — play eliminated.'}]}
+  ]
+}];
+
+const FILTERS = [['all','All'],['cfd','CFD & Aero'],['structures','Structures & FEA'],['testing','Physical testing'],['software','Software'],['hands-on','Hands-on']];
+
+const SKILLS = [
+  ['◇','Simulation & analysis',['ANSYS','SpaceClaim','SolidWorks Simulation','CFD','FEA','Transition SST','Mesh quality control']],
+  ['▲','Design & testing',['SolidWorks CAD','Wind-tunnel testing','Load-cell force balance','Smoke flow visualisation','3D printing (FDM)','Airfoil selection']],
+  ['{}','Software & data',['Python','NumPy','Matplotlib','UDP sockets','JSON','Data visualisation']],
+  ['⚙','Automotive',['OBD diagnostics','Suspension','Ignition systems','Cooling systems','Torque-to-spec fitting']]
+];
+
+/* ───────── RENDER PAGE ───────── */
+const arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
+
+document.getElementById('filters').innerHTML = FILTERS.map(([k,l],i) =>
+  `<button class="chip-btn${i?'':' on'}" data-f="${k}">${l}</button>`).join('');
+
+document.getElementById('grid').innerHTML = PROJECTS.map(p => `
+  <button class="card" data-open="${p.id}" data-cat="${p.cat.join(' ')}">
+    <div class="card-media"><span class="card-tag">${p.label}</span>${img(p.cover,p.coverAlt).replace(' data-zoom','')}</div>
+    <div class="card-body">
+      <div class="card-meta"><span>${p.org}</span><span>·</span><span>${p.date}</span></div>
+      <h3>${p.title}</h3>
+      <p>${p.summary}</p>
+      <div class="card-metrics">${p.chips.map(([v,l]) => `<div class="cm"><b>${v}</b><span>${l}</span></div>`).join('')}</div>
+      <span class="card-open">Open case study ${arrow}</span>
+    </div>
+  </button>`).join('');
+
+const TL = [['tidal','Oct 2025 – Mar 2026'],['winglet','Jun 2026'],['f1','Jun 2026'],['garage','Aug 2026']];
+document.getElementById('tl').innerHTML = TL.map(([id,d]) => {
+  const p = PROJECTS.find(x => x.id === id);
+  return `<button class="tl" data-open="${id}"><div class="d">${d}</div><h4>${p.title}</h4><p>${p.org}</p></button>`;
+}).join('');
+
+document.getElementById('sk').innerHTML = SKILLS.map(([i,h,t]) =>
+  `<div class="sk"><h4><i>${i}</i>${h}</h4><div class="tags">${t.map(x => `<span class="tag">${x}</span>`).join('')}</div></div>`).join('');
+
+document.getElementById('cert').innerHTML = img('image31.jpeg',"Dean's Commendation certificate");
+
+/* Filters */
+document.getElementById('filters').addEventListener('click', e => {
+  const b = e.target.closest('.chip-btn'); if (!b) return;
+  document.querySelectorAll('.chip-btn').forEach(x => x.classList.toggle('on', x === b));
+  const f = b.dataset.f;
+  document.querySelectorAll('.card').forEach(c => c.classList.toggle('hide', f !== 'all' && !c.dataset.cat.split(' ').includes(f)));
+});
+
+/* ───────── MODAL ───────── */
+const modal = document.getElementById('modal'), mBody = document.getElementById('m-body'), mTabs = document.getElementById('m-tabs');
+let cur = null, curTab = 0, lastFocus = null;
+
+function chart(){
+  const data = [['0°',0.66,1.25],['4°',2.09,1.55]], W=560,H=260,pl=44,pb=34,pt=16, max=2.5;
+  const y = v => pt + (H-pt-pb)*(1 - v/max);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="L/D ratio, CFD vs wind tunnel">`;
+  for (let v=0; v<=max+1e-9; v+=0.5){
+    s += `<line x1="${pl}" x2="${W-8}" y1="${y(v)}" y2="${y(v)}" stroke="#222d3a"/><text x="${pl-10}" y="${y(v)+4}" fill="#5f6d7f" font-size="11" font-family="JetBrains Mono,monospace" text-anchor="end">${v.toFixed(1)}</text>`;
+  }
+  const gw = (W-pl-8)/data.length, bw = 58;
+  data.forEach(([lab,cfd,wt],i) => {
+    const cx = pl + gw*i + gw/2;
+    [[cfd,'#6fb1ee',-bw-6],[wt,'#5fd1a6',6]].forEach(([v,c,dx]) => {
+      s += `<rect x="${cx+dx}" y="${y(v)}" width="${bw}" height="${y(0)-y(v)}" rx="5" fill="${c}" opacity=".9"/><text x="${cx+dx+bw/2}" y="${y(v)-7}" fill="#fff" font-size="13" font-family="JetBrains Mono,monospace" text-anchor="middle">${v.toFixed(2)}</text>`;
+    });
+    s += `<text x="${cx}" y="${H-10}" fill="#8e9db0" font-size="13" text-anchor="middle">AoA ${lab} · ${Math.round(Math.min(cfd,wt)/Math.max(cfd,wt)*100)}% correlation</text>`;
+  });
+  return `<div class="chart"><h4 class="mono" style="font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent)">Lift-to-drag ratio: simulation vs. wind tunnel</h4><div class="legend"><span><i style="background:#6fb1ee"></i>CFD (ANSYS)</span><span><i style="background:#5fd1a6"></i>Wind tunnel</span></div>${s}</svg></div>`;
+}
+
+function block(b){
+  switch(b.t){
+    case 'text': return `<div class="blk"><h4>${b.h}</h4>${b.p?`<p>${b.p}</p>`:''}${b.list?ul(b.list):''}</div>`;
+    case 'check': return `<div class="blk"><h4>${b.h}</h4><ul class="check">${b.list.map(i => `<li>${i}</li>`).join('')}</ul></div>`;
+    case 'row': return `<div class="row"><div class="row-media">${b.imgs.map(([f,a]) => img(f,a)).join('')}</div><div class="row-text">${b.title?`<h3>${b.title}</h3>`:''}${ul(b.list)}${b.extra||''}</div></div>`;
+    case 'metrics': return `<div class="metrics">${b.items.map(([v,l,hl]) => `<div class="metric${hl?' hl':''}"><div class="mv">${v}</div><div class="ml">${l}</div></div>`).join('')}</div>`;
+    case 'wide': return `<div class="wide">${img(b.f,b.a)}</div>`;
+    case 'chart': return chart();
+    case 'pipe': return `<div class="pipe">${b.steps.map(([k,h,p]) => `<div class="step"><div class="k">${k}</div><h5>${h}</h5><p>${p}</p></div>`).join('')}</div>`;
+    case 'case': return `<div class="gallery">${b.imgs.map((f,i) => img(f,`${b.alt} ${i+1}`)).join('')}</div>
+      <div class="flow">
+        <div class="fcol s"><div class="k"><i>!</i>Symptom</div><p>${b.s}</p></div>
+        <div class="fcol d"><div class="k"><i>?</i>Diagnosis</div>${b.d.startsWith('<')?b.d:`<p>${b.d}</p>`}</div>
+        <div class="fcol r"><div class="k"><i>✓</i>Repair</div><p>${b.r}</p></div>
+      </div>`;
+    case 'cases': return `<div class="blk"><h4>Overview</h4><p>A month in a working MOT and repair garage, carrying out inspections and repairs on customer vehicles. Each case below follows the fault from reported symptom through diagnosis to repair.</p></div>
+      <div class="cases">${cur.tabs.slice(1).map((t,i) => { const c=t.blocks[0]; return `<button class="case-link" data-goto="${i+1}">${img(c.imgs[0],c.alt).replace(' data-zoom','')}<div><div class="k">Case ${String(i+1).padStart(2,'0')}</div><h5>${t.name}</h5><p>${c.s.replace(/<[^>]+>/g,'').slice(0,70)}…</p></div></button>`; }).join('')}</div>`;
+  }
+  return '';
+}
+
+function showTab(i){
+  curTab = i;
+  mTabs.querySelectorAll('.tab').forEach((t,j) => { t.classList.toggle('on', j===i); t.setAttribute('aria-selected', j===i); });
+  mBody.innerHTML = `<div class="pane">${cur.tabs[i].blocks.map(block).join('')}</div>`;
+  mBody.scrollTop = 0;
+  const prev = document.getElementById('m-prev'), next = document.getElementById('m-next');
+  prev.disabled = i===0; next.disabled = i===cur.tabs.length-1;
+  prev.querySelector('span').textContent = i>0 ? cur.tabs[i-1].name : 'Previous';
+  next.querySelector('span').textContent = i<cur.tabs.length-1 ? cur.tabs[i+1].name : 'Next';
+}
+
+/* Update the URL hash for shareable links; ignored where not allowed (e.g. sandboxed previews) */
+function setHash(h){
+  try { history.replaceState(null,'', h || (location.pathname + location.search)); }
+  catch(_) {}
+}
+
+function openProject(id){
+  cur = PROJECTS.find(p => p.id === id); if (!cur) return;
+  lastFocus = document.activeElement;
+  document.getElementById('m-meta').innerHTML = `<span>${cur.org}</span><span>·</span><span>${cur.date}</span><span>·</span><span>${cur.dur}</span>`;
+  document.getElementById('m-title').textContent = cur.title;
+  document.getElementById('m-sum').textContent = cur.summary;
+  mTabs.innerHTML = cur.tabs.map((t,i) => `<button class="tab" role="tab" data-tab="${i}"><span class="n">${String(i+1).padStart(2,'0')}</span>${t.name}</button>`).join('');
+  showTab(0);
+  modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('locked');
+  setHash('#'+id);
+  modal.querySelector('.close').focus();
+}
+function closeProject(){
+  modal.classList.remove('open'); modal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('locked');
+  setHash('');
+  if (lastFocus) lastFocus.focus();
+}
+
+document.addEventListener('click', e => {
+  const o = e.target.closest('[data-open]'); if (o) { openProject(o.dataset.open); return; }
+  if (e.target.closest('[data-close]')) { closeProject(); return; }
+  const t = e.target.closest('[data-tab]'); if (t) { showTab(+t.dataset.tab); return; }
+  const g = e.target.closest('[data-goto]'); if (g) { showTab(+g.dataset.goto); return; }
+  const z = e.target.closest('img[data-zoom]');
+  if (z) { const lb = document.getElementById('lb'); lb.querySelector('img').src = z.src; lb.querySelector('img').alt = z.alt; lb.querySelector('p').textContent = z.alt; lb.classList.add('open'); return; }
+  if (e.target.closest('#lb')) document.getElementById('lb').classList.remove('open');
+});
+document.getElementById('m-prev').onclick = () => curTab>0 && showTab(curTab-1);
+document.getElementById('m-next').onclick = () => curTab<cur.tabs.length-1 && showTab(curTab+1);
+
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lb');
+  if (e.key === 'Escape') { if (lb.classList.contains('open')) lb.classList.remove('open'); else if (modal.classList.contains('open')) closeProject(); }
+  if (!modal.classList.contains('open') || lb.classList.contains('open')) return;
+  if (e.key === 'ArrowRight' && curTab < cur.tabs.length-1) showTab(curTab+1);
+  if (e.key === 'ArrowLeft' && curTab > 0) showTab(curTab-1);
+});
+
+/* Deep links, e.g. doddihal.com/Rohan/#winglet */
+if (location.hash && PROJECTS.some(p => '#'+p.id === location.hash)) openProject(location.hash.slice(1));
+</script>
+</body>
+</html>
