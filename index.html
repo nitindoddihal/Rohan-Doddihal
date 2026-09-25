@@ -121,12 +121,12 @@ section.block{padding:90px 0;border-bottom:1px solid var(--border)}
 
 /* ACHIEVEMENTS */
 .ach{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;align-items:stretch}
-.ach-main{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.ach-main{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}
 .ach-main .cert-wrap{background:#fff;border-radius:10px;overflow:hidden;cursor:zoom-in;border:1px solid var(--border-2)}
-.ach-main .cert-wrap img,.ach-main .cert-wrap .ph{width:100%;aspect-ratio:1.414/1;object-fit:cover}
+.ach-main .cert-wrap img,.ach-main .cert-wrap .ph{width:100%;aspect-ratio:2.8/1;object-fit:cover}
 .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--amber);padding:3px 8px;border:1px solid rgba(240,179,90,.35);border-radius:6px;background:rgba(240,179,90,.08)}
-.ach-main h3{font-size:26px;letter-spacing:-.5px;margin:14px 0 8px}
-.ach-main p{color:var(--muted);font-size:14.5px}
+.ach-main h3{font-size:18px;letter-spacing:-.3px;margin:6px 0 4px}
+.ach-main p{color:var(--muted);font-size:12px}
 .ach-side{display:grid;gap:10px}
 .ach-tile{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;display:flex;gap:18px;align-items:center;text-align:left;transition:.2s}
 .ach-tile:hover{border-color:var(--accent-line)}
@@ -339,7 +339,9 @@ ul.check li::before{content:"✓";color:var(--green);font-weight:700}
             <p>University of Exeter. Click the certificate to view it in full.</p>
           </div>
         </div>
-        <div class="ach-side">
+        <div class="ach-tile"><img src="./images/garage.jpeg" alt="Description" data-zoom><div><span class="badge">★ Certification</span><h4>Mechanic Assistant</h4><p>Proof of work at PG MOT Autocare</p></div></div>
+      </div>
+      <div class="ach-side">
           <div class="ach-tile"><img src="./images/cswa.png" alt="Venturi turbine CAD" data-zoom><div><span class="badge">★ Certification</span><h4>CSWA</h4><p>SolidWorks Certification</p></div></div>
           <div class="ach-tile"><img src="./images/simulink.png" alt="F1 telemetry dashboard" data-zoom><div><span class="badge">★ Certification</span><h4>MATLAB</h4><p>MATLAB Simulink Certification</p></div></div>
           <div class="ach-tile"><img src="./images/excode.png" alt="Description" data-zoom><div><span class="badge">★ Certification</span><h4>Python</h4><p>Excode Python Certification</p></div></div>
