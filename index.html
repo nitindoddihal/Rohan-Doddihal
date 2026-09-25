@@ -334,12 +334,12 @@ ul.check li::before{content:"✓";color:var(--green);font-weight:700}
           <div class="cert-wrap" id="cert"></div>
           <div>
             <span class="badge">★ Academic award</span>
-            <h3>Dean's Commendation</h3>
+            <h3>Dean's Commendation (85%)</h3>
             <p>University of Exeter. Click the certificate to view it in full.</p>
           </div>
         </div>
         <div class="ach-side">
-          <button class="ach-tile" data-open="tidal"><div class="v">85%</div><div><h4>1st year progress</h4><p>Average percentage</p></div></button>
+          <button class="ach-tile" data-open="tidal"><div class="v">71%</div><div><h4>Tidal Energy Group Project</h4><p>First group design project - Bristol Channel ocean energy concept</p></div></button>
           <button class="ach-tile" data-open="f1"><div class="v">15%</div><div><h4>Average lap time decrease, 5 circuits</h4><p>Using a self-built Python telemetry dashboard</p></div></button>
         </div>
       </div>
@@ -575,7 +575,7 @@ document.getElementById('grid').innerHTML = PROJECTS.map(p => `
     </div>
   </button>`).join('');
 
-const TL = [['tidal','Oct 2025 – Mar 2026'],['winglet','Jun 2026'],['f1','Jun 2026'],['garage','Aug 2026']];
+const TL = [['tidal','Sep 2025 – Mar 2026'],['winglet','Feb 2026 - Jun 2026'],['f1','Jun 2026'],['garage','Aug 2026']];
 document.getElementById('tl').innerHTML = TL.map(([id,d]) => {
   const p = PROJECTS.find(x => x.id === id);
   return `<button class="tl" data-open="${id}"><div class="d">${d}</div><h4>${p.title}</h4><p>${p.org}</p></button>`;
