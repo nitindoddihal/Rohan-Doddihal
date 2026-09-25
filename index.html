@@ -411,7 +411,7 @@ const PROJECTS = [
     {name:'Overview', blocks:[
       {t:'text', h:'Brief', p:'Acting as an engineering consultancy commissioned by a corporate investment fund with strong ties to renewable energy and green development, the team produced exploratory designs for an ocean energy project in the Bristol Channel, optionally connected to an offshore working platform.'},
       {t:'check', h:'Design constraints', list:['Working platform at least 4 m above water level','Minimum platform area of 50 m²','Platform horizontal and largely free from wind- and wave-induced oscillation','Platform holds position and does not drift']},
-      {t:'row', imgs:[['location.png','Lavernock Point map']], title:'Site selection — Lavernock Point', list:[
+      {t:'row', imgs:[['location.png','Lavernock Point map']], title:'Site selection - Lavernock Point', list:[
         'Wind speeds of 12–15 knots, considered calm for offshore platforms, limiting installation and operational risk.',
         'Tidal currents reach up to <strong>six knots</strong>, allowing consistent and efficient energy generation.']}
     ]},
@@ -421,10 +421,10 @@ const PROJECTS = [
         'Open-centre turbine gives marine life a safe bypass through the device.',
         'The rotor sits near the end of the shroud throat to take advantage of the low-pressure, high-velocity region created by the venturi effect.']},
       {t:'row', imgs:[['flow.png','Shroud CFD velocity contour']], title:'Shroud flow analysis', list:[
-        'With a 1.2 m/s inlet velocity, the shroud reached <strong>4.690 m/s</strong> at the throat — a <strong>×3.908</strong> multiplier.',
+        'With a 1.2 m/s inlet velocity, the shroud reached <strong>4.690 m/s</strong> at the throat - a <strong>×3.908</strong> multiplier.',
         'Supports the case that the device can generate more power without a large increase in scale, and therefore cost.']},
       {t:'row', imgs:[['blades.png','Blade airfoil pressure contours']], title:'Blade profile selection', list:[
-        'Compared the <strong>NACA0012</strong> (top) and <strong>FX74</strong> (bottom) under identical flow conditions and angle of attack — pressure contours were very similar.',
+        'Compared the <strong>NACA0012</strong> (top) and <strong>FX74</strong> (bottom) under identical flow conditions and angle of attack - pressure contours were very similar.',
         'NACA0012 selected: its less extreme camber makes it easier to manufacture.',
         'NACA profiles are widely researched, so supporting data is readily available.']}
     ]},
@@ -437,13 +437,13 @@ const PROJECTS = [
       {t:'row', imgs:[['platformfea.png','Platform FEA']], title:'Platform vertical loading', list:[
         '<strong>400 kN</strong> vertical load gave a maximum displacement of <strong>25 mm</strong>.',
         'Stress distributed largely as expected; uneven stress in some members pointed to modelling inaccuracies.',
-        'No buckling observed — the truss configuration was stable under load.']}
+        'No buckling observed - the truss configuration was stable under load.']}
     ]},
     {name:'Outcome', blocks:[
       {t:'metrics', items:[['71%','Final project grade',1],['4.69 m/s','Throat velocity (1.2 m/s inlet)'],['80 kN','Truss leg FEA load'],['25 mm','Max platform displacement']]},
       {t:'text', h:'Reflection', list:['A strong first group project. The team started without much direction but became goal-oriented as the first presentation approached, finishing with a 71% grade the whole group was proud of.']},
       {t:'text', h:'Limitations', list:[
-        'No physical testing of the venturi — reliance on SolidWorks simulation alone was a significant limitation.',
+        'No physical testing of the venturi - reliance on SolidWorks simulation alone was a significant limitation.',
         'The same applied to the truss tests, and only a small number of truss types were evaluated; jacket-style and square trusses never progressed past brainstorming.']}
     ]}
   ]
@@ -459,9 +459,9 @@ const PROJECTS = [
       {t:'row', imgs:[['winglet.png','Winglet render']], title:'Airfoil selection & CAD', list:[
         'Reviewed motorsport airfoil studies and selected the <strong>S1223</strong> for its high-lift, low-drag profile.',
         'Built a 1/3-scale model in SolidWorks: airfoil imported with the curve feature, splined and extruded.']},
-      {t:'row', imgs:[['wingletfea.png','FEA load test']], title:'Structural load testing — FSUK 2025', list:[
-        '<strong>T8.4.1:</strong> 200 N distributed over a minimum of 225 cm², max deflection ≤ 10 mm.',
-        '<strong>T8.4.2:</strong> 50 N at any point in any direction, max deflection ≤ 25 mm — passed.']}
+      {t:'row', imgs:[['wingletfea.png','FEA load test']], title:'Structural load testing - FSUK 2025', list:[
+        '<strong>T8.4.1:</strong> 200 N distributed over a minimum of 225 cm², max deflection ≤ 10 mm - passed.',
+        '<strong>T8.4.2:</strong> 50 N at any point in any direction, max deflection ≤ 25 mm - passed.']}
     ]},
     {name:'CFD', blocks:[
       {t:'row', imgs:[['mesh.png','ANSYS mesh']], title:'Mesh & solver setup', list:[
@@ -477,8 +477,8 @@ const PROJECTS = [
         'Model 3D printed by fused deposition modelling and mounted in the wind tunnel.',
         'Set to 0° and load cells zeroed so model weight did not affect readings.',
         'Anemometer-measured wind speed: <strong>11.8 m/s</strong>.']},
-      {t:'row', imgs:[['force0.png','Force balance at 0°']], title:'Result at 0°', list:['Measured L/D <strong>1.25</strong> vs. simulated 0.66 — <strong>53%</strong> correlation.']},
-      {t:'row', imgs:[['force4.png','Force balance at 4°']], title:'Result at 4°', list:['Measured L/D <strong>1.55</strong> vs. simulated 2.09 — <strong>74%</strong> correlation.']},
+      {t:'row', imgs:[['force0.png','Force balance at 0°']], title:'Result at 0°', list:['Measured L/D <strong>1.25</strong> vs. simulated 0.66 - <strong>53%</strong> correlation.']},
+      {t:'row', imgs:[['force4.png','Force balance at 4°']], title:'Result at 4°', list:['Measured L/D <strong>1.55</strong> vs. simulated 2.09 - <strong>74%</strong> correlation.']},
       {t:'row', imgs:[['smoke machine.png','Smoke generator'],['smokeflow.png','Smoke flow visualisation']], title:'Flow visualisation', list:['Used the smoke machine to visualise flow over the winglet.']}
     ]},
     {name:'Results', blocks:[
@@ -487,7 +487,7 @@ const PROJECTS = [
       {t:'text', h:'Reflection', list:[
         'Valuable first experience in ANSYS and in correlating CFD against physical wind-tunnel data.',
         'To improve correlation: study y+ values and refine the boundary-layer mesh.',
-        'Other sources of discrepancy: surface roughness of the printed model and disturbance from the mounting rod — most noticeable at low angles, where the wing’s own aerodynamic forces were smaller.']}
+        'Other sources of discrepancy: surface roughness of the printed model and disturbance from the mounting rod - most noticeable at low angles, where the wing’s own aerodynamic forces were smaller.']}
     ]}
   ]
 },
@@ -512,39 +512,39 @@ const PROJECTS = [
         'Packet 0 (motion) for track-map X/Z position, packet 1 (session) for track ID, packet 2 (lap) for lap time, sector times and lap distance, packet 6 (car telemetry) for throttle, brake, steer, speed and gear.',
         'A keyboard interrupt stops recording; the lap is serialised to JSON as the reference if none exists, and later runs are compared against it.',
         'Delta computed by interpolating both laps onto a shared distance axis and differencing at small distance increments.',
-        'Six subplots — throttle, brake, steer, speed, gear and delta — plus a track-map axis and a table of sector times, lap time, delta and top speed.']}
+        'Six subplots - throttle, brake, steer, speed, gear and delta - plus a track-map axis and a table of sector times, lap time, delta and top speed.']}
     ]},
     {name:'Outcome', blocks:[
       {t:'metrics', items:[['15%','Average lap-time improvement',1],['5','Circuits tested'],['4','UDP packet types decoded'],['6','Telemetry traces']]},
       {t:'text', h:'Result', list:[
         'Used across 5 circuits to compare personal-best laps before and after reviewing the traces, giving an average lap-time improvement of 15%.',
-        'Built understanding of how data acquisition, processing and visualisation connect to on-track performance — skills directly relevant to motorsport performance engineering.']}
+        'Built understanding of how data acquisition, processing and visualisation connect to on-track performance - skills directly relevant to motorsport performance engineering.']}
     ]}
   ]
 },
 {
   id:'garage', title:'Garage Intern', org:'PG MOT Village', date:'Aug 2026', dur:'1 month',
   cat:['hands-on'], label:'Industry · Automotive', cover:'cover.jpeg', coverAlt:'Engine bay',
-  summary:'Workshop internship diagnosing and repairing customer vehicles — suspension, ignition and cooling faults, taken from symptom to fix.',
+  summary:'Workshop internship diagnosing and repairing customer vehicles - suspension, ignition and cooling faults, taken from symptom to fix.',
   chips:[['4','Case studies'],['OBD','Diagnostics'],['OEM','Spec repairs']],
   tabs:[
     {name:'Overview', blocks:[{t:'cases'}]},
     {name:'Drop link', blocks:[{t:'case', imgs:['link1.jpeg','link2.jpeg','link3.jpeg'], alt:'Drop link',
       s:'Excessive play detected in the tyre when tested vertically during vehicle inspection.',
       d:'Physical inspection confirmed a worn drop link with excessive articulation in the ball joint, causing instability. The drop link connects the anti-roll bar to the suspension, reducing body roll in corners.',
-      r:'Removed the failed drop link using an impact driver and socket set. Fitted a new OEM-spec drop link, torqued to specification and retested — play eliminated.'}]},
+      r:'Removed the failed drop link using an impact driver and socket set. Fitted a new OEM-spec drop link, torqued to specification and retested - play eliminated.'}]},
     {name:'Cylinder misfire', blocks:[{t:'case', imgs:['cylin1.jpeg','cylin2.jpeg','cylin3.jpeg'], alt:'Engine',
       s:'Rough running reported. OBD scan returned <strong>P0304</strong> (cylinder 4 misfire) and <strong>P0300</strong> (multi-cylinder misfire), both current faults on the ECM.',
-      d:'<ol><li><strong>Ignition coil</strong> — swapped coils on cylinders 4 and 1. Fault stayed on cylinder 4: coil ruled out.</li><li><strong>Spark plug</strong> — swapped plugs on cylinders 4 and 1. Fault stayed on cylinder 4: plug ruled out.</li><li><strong>Compression test</strong> on cylinder 4.</li></ol>',
-      r:'Fault isolated to cylinder 4 by component swap testing. Compression test found a leak in the intake manifold gasket — a structured diagnostic process rather than speculative part replacement.'}]},
+      d:'<ol><li><strong>Ignition coil</strong> - swapped coils on cylinders 4 and 1. Fault stayed on cylinder 4: coil ruled out.</li><li><strong>Spark plug</strong> - swapped plugs on cylinders 4 and 1. Fault stayed on cylinder 4: plug ruled out.</li><li><strong>Compression test</strong> on cylinder 4.</li></ol>',
+      r:'Fault isolated to cylinder 4 by component swap testing. Compression test found a leak in the intake manifold gasket - a structured diagnostic process rather than speculative part replacement.'}]},
     {name:'Thermostat housing', blocks:[{t:'case', imgs:['thermo1.jpeg','thermo2.jpeg'], alt:'Thermostat housing',
       s:'Customer reported overheating.',
-      d:'Identified a coolant leak at the thermostat housing. Confirmed thermostat failure as the cause — the unit was not opening correctly, disrupting coolant flow.',
+      d:'Identified a coolant leak at the thermostat housing. Confirmed thermostat failure as the cause - the unit was not opening correctly, disrupting coolant flow.',
       r:'Drained the cooling system, installed a new thermostat housing with a fresh gasket and refilled the coolant.'}]},
     {name:'Lower arm', blocks:[{t:'case', imgs:['arm1.jpeg','arm2.jpeg','arm3.jpeg'], alt:'Lower suspension arm',
       s:'Excessive play detected when gripping the tyre at 12 and 6 o’clock during vehicle inspection.',
       d:'Physical inspection confirmed a worn ball joint on the lower arm, causing instability.',
-      r:'Removed the failed lower arm using an impact driver and socket set. Fitted a new OEM-spec part, torqued to specification and retested — play eliminated.'}]}
+      r:'Removed the failed lower arm using an impact driver and socket set. Fitted a new OEM-spec part, torqued to specification and retested - play eliminated.'}]}
   ]
 }];
 
