@@ -128,6 +128,7 @@ section.block{padding:90px 0;border-bottom:1px solid var(--border)}
 .ach-main h3{font-size:18px;letter-spacing:-.3px;margin:6px 0 4px}
 .ach-main p{color:var(--muted);font-size:12px}
 .ach-side{display:grid;gap:10px}
+.ach-left{display:grid;gap:10px}
 .ach-tile{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;display:flex;gap:18px;align-items:center;text-align:left;transition:.2s}
 .ach-tile:hover{border-color:var(--accent-line)}
 .ach-tile img{width:56px;height:44px;min-width:56px;object-fit:cover;border-radius:6px;flex-shrink:0;cursor:zoom-in}
@@ -331,26 +332,27 @@ ul.check li::before{content:"✓";color:var(--green);font-weight:700}
     <div class="wrap">
       <div class="sec-head"><div><div class="kicker">04 — Recognition</div><h2>Achievements</h2></div></div>
       <div class="ach">
-        <div class="ach-main">
-          <div class="cert-wrap" id="cert"></div>
-          <div>
-            <span class="badge">★ Academic award</span>
-            <h3>Dean's Commendation (85%)</h3>
-            <p>University of Exeter. Click the certificate to view it in full.</p>
+        <div class="ach-left">
+          <div class="ach-main">
+            <div class="cert-wrap" id="cert"></div>
+            <div>
+              <span class="badge">★ Academic award</span>
+              <h3>Dean's Commendation (85%)</h3>
+              <p>University of Exeter. Click the certificate to view it in full.</p>
+            </div>
+            </div>
+          <div class="ach-tile"><img src="./images/garage.jpeg" alt="Description" data-zoom><div><span class="badge">★ Certification</span><h4>Mechanic Assistant</h4><p>Proof of work at PG MOT Autocare</p></div></div>
+        </div>
+        <div class="ach-side">
+            <div class="ach-tile"><img src="./images/cswa.png" alt="Venturi turbine CAD" data-zoom><div><span class="badge">★ Certification</span><h4>CSWA</h4><p>SolidWorks Certification</p></div></div>
+            <div class="ach-tile"><img src="./images/simulink.png" alt="F1 telemetry dashboard" data-zoom><div><span class="badge">★ Certification</span><h4>MATLAB</h4><p>MATLAB Simulink Certification</p></div></div>
+            <div class="ach-tile"><img src="./images/excode.png" alt="Description" data-zoom><div><span class="badge">★ Certification</span><h4>Python</h4><p>Excode Python Certification</p></div></div>
+            <div class="ach-tile"><img src="./images/onramp.png" alt="Description" data-zoom><div><span class="badge">★ Certification</span><h4>MATLAB</h4><p>MATLAB Onramp Certification</p></div></div>
           </div>
         </div>
-        <div class="ach-tile"><img src="./images/garage.jpeg" alt="Description" data-zoom><div><span class="badge">★ Certification</span><h4>Mechanic Assistant</h4><p>Proof of work at PG MOT Autocare</p></div></div>
       </div>
-      <div class="ach-side">
-          <div class="ach-tile"><img src="./images/cswa.png" alt="Venturi turbine CAD" data-zoom><div><span class="badge">★ Certification</span><h4>CSWA</h4><p>SolidWorks Certification</p></div></div>
-          <div class="ach-tile"><img src="./images/simulink.png" alt="F1 telemetry dashboard" data-zoom><div><span class="badge">★ Certification</span><h4>MATLAB</h4><p>MATLAB Simulink Certification</p></div></div>
-          <div class="ach-tile"><img src="./images/excode.png" alt="Description" data-zoom><div><span class="badge">★ Certification</span><h4>Python</h4><p>Excode Python Certification</p></div></div>
-          <div class="ach-tile"><img src="./images/onramp.png" alt="Description" data-zoom><div><span class="badge">★ Certification</span><h4>MATLAB</h4><p>MATLAB Onramp Certification</p></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 
 <footer>
   <div class="wrap">
